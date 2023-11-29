@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  th:action="@{/upload}"
+       th:object="${audio}" method="post" enctype="multipart/form-data">
+
+    <input placeholder="Название курса" th:field="*{name}" type="text"/><br><br>
+    <input placeholder="Полное описание" th:field="*{description}" type="text"/><br><br>
+
+
+    <h3>Превью</h3><input type="file" name="preview" id="preview" accept="image/png"><br>
+    <h3>Файл</h3><input type="file" name="content" id="content" accept="application/zip">
+    <br><br>
+    <input type="submit" value="Добавить">
+</form>
+
+</body>
+</html>
